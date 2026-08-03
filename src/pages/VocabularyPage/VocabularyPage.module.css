@@ -1,0 +1,40 @@
+.page { padding-bottom: 72px; }
+.headingRow { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
+.backLink { display: inline-block; margin-bottom: 24px; color: var(--color-text-secondary); font-size: 14px; font-weight: 700; }
+.eyebrow { margin-bottom: 8px; color: var(--color-primary); font-size: 12px; font-weight: 800; letter-spacing: .12em; }
+.count { display: flex; min-width: 108px; padding: 16px; flex-direction: column; align-items: center; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); }
+.count strong { color: var(--color-primary-dark); font-size: 24px; }
+.count span { color: var(--color-text-secondary); font-size: 12px; }
+.searchLabel { display: block; margin-bottom: 20px; }
+.searchInput { width: 100%; padding: 14px 18px; border: 1px solid var(--color-border); border-radius: var(--radius-md); outline: none; background: var(--color-surface); color: var(--color-text); }
+.searchInput:focus { border-color: var(--color-primary); box-shadow: 0 0 0 3px rgb(99 102 241 / 14%); }
+.pageSummary { margin: 0 0 12px; color: var(--color-text-secondary); font-size: 13px; text-align: right; }
+.wordList { display: grid; margin: 0; padding: 0; gap: 10px; list-style: none; }
+.wordCard { display: grid; grid-template-columns: minmax(160px, .9fr) minmax(200px, 1.6fr) auto; gap: 20px; align-items: center; padding: 18px 20px; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); }
+.japanese, .definition { display: flex; flex-direction: column; gap: 4px; }
+.word { font-size: 22px; font-weight: 800; }
+.furigana, .romaji { color: var(--color-text-secondary); font-size: 13px; }
+.meaning { font-weight: 650; }
+.level { padding: 6px 10px; border-radius: 999px; background: #eef2ff; color: var(--color-primary-dark); font-size: 12px; font-weight: 800; }
+.status, .notice { padding: 40px 20px; text-align: center; color: var(--color-text-secondary); }
+.notice { border: 1px dashed #c7d2fe; border-radius: var(--radius-lg); background: #eef2ff; }
+.notice strong { display: block; margin-bottom: 8px; color: var(--color-text); }
+.noticeHint { margin-top: 8px; font-size: 13px; }
+.pagination { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 28px; }
+.pagination button { min-width: 42px; height: 42px; padding: 0 13px; border: 1px solid var(--color-border); border-radius: 10px; background: var(--color-surface); color: var(--color-text-secondary); font-weight: 750; }
+.pagination button:hover:not(:disabled) { border-color: var(--color-primary); color: var(--color-primary-dark); }
+.pagination button:focus-visible { outline: 3px solid rgb(99 102 241 / 24%); outline-offset: 2px; }
+.pagination button:disabled { cursor: not-allowed; opacity: .42; }
+.pageNumbers { display: flex; gap: 6px; }
+.pagination .activePage { border-color: var(--color-primary); background: var(--color-primary); color: white; }
+.visuallyHidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (max-width: 640px) {
+  .headingRow { align-items: flex-start; }
+  .count { min-width: 88px; }
+  .wordCard { grid-template-columns: 1fr auto; gap: 12px; }
+  .definition { grid-column: 1 / -1; grid-row: 2; }
+  .level { grid-column: 2; grid-row: 1; }
+  .pagination { gap: 7px; }
+  .pagination button { min-width: 38px; padding: 0 10px; }
+  .pageNumbers button:nth-child(2), .pageNumbers button:nth-child(4) { display: none; }
+}

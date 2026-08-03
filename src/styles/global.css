@@ -1,0 +1,35 @@
+@import "./reset.css";
+@import "./variables.css";
+
+:root {
+  font-family:
+    Inter, Pretendard, "Noto Sans KR", "Noto Sans JP", sans-serif;
+  color: var(--color-text);
+  background: var(--color-background);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: var(--color-background);
+}
+
+button {
+  border: none;
+}
+
+.page {
+  width: min(100% - 32px, var(--content-width));
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.page-title {
+  margin-bottom: 12px;
+  font-size: clamp(28px, 4vw, 40px);
+}
+
+.page-description {
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
