@@ -22,13 +22,16 @@ export default function CoursePage() {
 
         <div className={styles.levelGrid}>
           {jlptLevels.map((level) => (
-            <Link className={styles.levelCard} key={level} to={`/vocabulary/jlpt/n${level}`}>
+            <article className={styles.levelCard} key={level}>
               <span className={styles.levelName}>N{level}</span>
               <span className={styles.levelDescription}>
                 {level === 5 ? "입문" : level === 4 ? "초급" : level === 3 ? "중급" : level === 2 ? "중상급" : "고급"}
               </span>
-              <span className={styles.arrow} aria-hidden="true">→</span>
-            </Link>
+              <div className={styles.levelActions}>
+                <Link to={`/vocabulary/jlpt/n${level}`}>단어 학습</Link>
+                <Link className={styles.quizLink} to={`/quiz/jlpt/n${level}`}>퀴즈 풀기</Link>
+              </div>
+            </article>
           ))}
         </div>
       </section>

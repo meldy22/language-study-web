@@ -6,12 +6,16 @@
 .sectionHeading p { color: var(--color-text-secondary); line-height: 1.6; }
 .languageBadge { padding: 7px 11px; border-radius: 999px; background: #eef2ff; color: var(--color-primary-dark); font-size: 12px; font-weight: 800; }
 .levelGrid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
-.levelCard { position: relative; display: flex; min-height: 128px; padding: 18px; flex-direction: column; border: 1px solid var(--color-border); border-radius: var(--radius-md); transition: border-color .2s, transform .2s, box-shadow .2s; }
+.levelCard { position: relative; display: flex; min-height: 154px; padding: 18px; flex-direction: column; border: 1px solid var(--color-border); border-radius: var(--radius-md); transition: border-color .2s, transform .2s, box-shadow .2s; }
 .levelCard:hover { border-color: var(--color-primary); box-shadow: 0 10px 24px rgb(99 102 241 / 12%); transform: translateY(-2px); }
 .levelCard:focus-visible { outline: 3px solid rgb(99 102 241 / 28%); outline-offset: 2px; }
 .levelName { color: var(--color-primary-dark); font-size: 26px; font-weight: 850; }
 .levelDescription { margin-top: 5px; color: var(--color-text-secondary); font-size: 13px; }
-.arrow { margin-top: auto; align-self: flex-end; color: var(--color-primary); font-size: 20px; }
+.levelActions { display: grid; grid-template-columns: 1fr; gap: 6px; margin-top: auto; padding-top: 14px; }
+.levelActions a { padding: 7px 8px; border-radius: 8px; background: #f1f5f9; color: var(--color-text-secondary); font-size: 12px; font-weight: 750; text-align: center; }
+.levelActions a:hover { background: #e2e8f0; }
+.levelActions .quizLink { background: var(--color-primary); color: white; }
+.levelActions .quizLink:hover { background: var(--color-primary-dark); }
 .comingSoon { opacity: .72; box-shadow: none; }
 @media (max-width: 760px) { .levelGrid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 480px) { .courseSection { padding: 20px; } .levelGrid { grid-template-columns: 1fr; } .levelCard { min-height: 96px; } }
