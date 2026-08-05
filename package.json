@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "import:jlpt": "node --env-file=.env.local scripts/import-jlpt-words.mjs"
+    "import:jlpt": "node --env-file=.env.local scripts/import-jlpt-words.mjs",
+    "generate:examples": "node --env-file=.env.local scripts/generate-jlpt-examples.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.111.0",

@@ -9,13 +9,22 @@
 .searchInput { width: 100%; padding: 14px 18px; border: 1px solid var(--color-border); border-radius: var(--radius-md); outline: none; background: var(--color-surface); color: var(--color-text); }
 .searchInput:focus { border-color: var(--color-primary); box-shadow: 0 0 0 3px rgb(99 102 241 / 14%); }
 .pageSummary { margin: 0 0 12px; color: var(--color-text-secondary); font-size: 13px; text-align: right; }
-.wordList { display: grid; margin: 0; padding: 0; gap: 10px; list-style: none; }
-.wordCard { display: grid; grid-template-columns: minmax(160px, .9fr) minmax(200px, 1.6fr) auto; gap: 20px; align-items: center; padding: 18px 20px; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); }
+.wordList { display: grid; margin: 0; padding: 0; gap: 12px; list-style: none; }
+.wordItem { overflow: hidden; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); }
+.wordCard { display: grid; grid-template-columns: minmax(160px, .9fr) minmax(200px, 1.6fr) auto; gap: 20px; align-items: center; padding: 18px 20px; }
 .japanese, .definition { display: flex; flex-direction: column; gap: 4px; }
 .word { font-size: 22px; font-weight: 800; }
 .furigana, .romaji { color: var(--color-text-secondary); font-size: 13px; }
 .meaning { font-weight: 650; }
 .level { padding: 6px 10px; border-radius: 999px; background: #eef2ff; color: var(--color-primary-dark); font-size: 12px; font-weight: 800; }
+.examples { padding: 16px 20px 18px; border-top: 1px solid var(--color-border); background: #fafbff; }
+.exampleHeading { margin-bottom: 12px; color: var(--color-primary-dark); font-size: 12px; font-weight: 850; letter-spacing: .08em; }
+.example { display: grid; grid-template-columns: 28px 1fr; gap: 10px; }
+.example + .example { margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--color-border); }
+.exampleNumber { display: grid; width: 24px; height: 24px; place-items: center; border-radius: 7px; background: #e0e7ff; color: var(--color-primary-dark); font-size: 11px; font-weight: 850; }
+.exampleJapanese { color: var(--color-text); font-size: 16px; font-weight: 700; line-height: 1.55; }
+.exampleReading { margin-top: 2px; color: var(--color-text-secondary); font-size: 12px; line-height: 1.5; }
+.exampleTranslation { margin-top: 5px; color: #475569; font-size: 14px; line-height: 1.55; }
 .status, .notice { padding: 40px 20px; text-align: center; color: var(--color-text-secondary); }
 .notice { border: 1px dashed #c7d2fe; border-radius: var(--radius-lg); background: #eef2ff; }
 .notice strong { display: block; margin-bottom: 8px; color: var(--color-text); }

@@ -36,13 +36,18 @@ export default function CoursePage() {
         </div>
       </section>
 
-      <section className={`${styles.courseSection} ${styles.comingSoon}`}>
+      <section className={styles.courseSection}>
         <div className={styles.sectionHeading}>
           <div>
             <h2>TOEIC</h2>
-            <p>영어 단어 과정은 곧 준비할 예정이에요.</p>
+            <p>Day 1부터 Day 30까지 매일 한 묶음씩 학습하세요.</p>
           </div>
           <span className={styles.languageBadge}>English</span>
+        </div>
+        <div className={styles.toeicActions}>
+          <Link to="/vocabulary/toeic/day/1">Day 1부터 학습</Link>
+          <Link className={styles.toeicQuizLink} to="/quiz/toeic/day-1">Day별 랜덤 퀴즈</Link>
+          <Link className={styles.toeicQuizLink} to="/quiz/toeic/all">Day 1~30 랜덤 퀴즈</Link>
         </div>
       </section>
     </section>

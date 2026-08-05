@@ -48,7 +48,7 @@ export default function VocabularyPage() {
 
       const { data, count, error: queryError } = await supabase
         .from("jlpt_vocabulary")
-        .select("id, word, meaning, furigana, romaji, level", { count: "exact" })
+        .select("id, word, meaning, furigana, romaji, level, jlpt_example_sentences(id, japanese, reading, translation_ko, is_verified)", { count: "exact" })
         .eq("level", numericLevel)
         .order("id", { ascending: true })
         .range(from, to);
@@ -137,16 +137,33 @@ export default function VocabularyPage() {
           <p className={styles.pageSummary}>{currentPage} / {totalPages} 페이지 · 페이지당 {PAGE_SIZE}개</p>
           <ul className={styles.wordList}>
             {filteredWords.map((item) => (
-              <li className={styles.wordCard} key={item.id}>
-                <div className={styles.japanese}>
-                  <span className={styles.word}>{item.word}</span>
-                  <span className={styles.furigana}>{item.furigana}</span>
+              <li className={styles.wordItem} key={item.id}>
+                <div className={styles.wordCard}>
+                  <div className={styles.japanese}>
+                    <span className={styles.word}>{item.word}</span>
+                    <span className={styles.furigana}>{item.furigana}</span>
+                  </div>
+                  <div className={styles.definition}>
+                    <span className={styles.meaning}>{item.meaning}</span>
+                    <span className={styles.romaji}>{item.romaji}</span>
+                  </div>
+                  <span className={styles.level}>N{item.level}</span>
                 </div>
-                <div className={styles.definition}>
-                  <span className={styles.meaning}>{item.meaning}</span>
-                  <span className={styles.romaji}>{item.romaji}</span>
-                </div>
-                <span className={styles.level}>N{item.level}</span>
+                {item.jlpt_example_sentences && item.jlpt_example_sentences.length > 0 && (
+                  <div className={styles.examples}>
+                    <p className={styles.exampleHeading}>예문</p>
+                    {item.jlpt_example_sentences.slice(0, 2).map((example, index) => (
+                      <article className={styles.example} key={example.id}>
+                        <span className={styles.exampleNumber}>{index + 1}</span>
+                        <div>
+                          <p className={styles.exampleJapanese} lang="ja">{example.japanese}</p>
+                          <p className={styles.exampleReading} lang="ja">{example.reading}</p>
+                          <p className={styles.exampleTranslation}>{example.translation_ko}</p>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                )}
               </li>
             ))}
           </ul>

@@ -5,4 +5,13 @@ export type VocabularyWord = {
   furigana: string;
   romaji: string;
   level: number;
+  jlpt_example_sentences?: ExampleSentence[];
+};
+
+export type ExampleSentence = {
+  id: number;
+  japanese: string;
+  reading: string;
+  translation_ko: string;
+  is_verified: boolean;
 };

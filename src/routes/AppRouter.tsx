@@ -4,6 +4,8 @@ import MainLayout from "../layouts/MainLayout/MainLayout";
 import CoursePage from "../pages/CoursePage/CoursePage";
 import HomePage from "../pages/HomePage/HomePage";
 import QuizPage from "../pages/QuizPage/QuizPage";
+import ToeicQuizPage from "../pages/ToeicQuizPage/ToeicQuizPage";
+import ToeicVocabularyPage from "../pages/ToeicVocabularyPage/ToeicVocabularyPage";
 import VocabularyPage from "../pages/VocabularyPage/VocabularyPage";
 
 export default function AppRouter() {
@@ -21,9 +23,16 @@ export default function AppRouter() {
           />
 
           <Route
+            path="vocabulary/toeic/day/:day"
+            element={<ToeicVocabularyPage />}
+          />
+
+          <Route
             path="quiz/:subjectCode/:level"
             element={<QuizPage />}
           />
+
+          <Route path="quiz/toeic/:scope" element={<ToeicQuizPage />} />
 
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>

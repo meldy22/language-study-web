@@ -45,3 +45,14 @@ npm run dev
 - `npm run build`: 배포용 빌드 확인
 - `npm run lint`: 코드 검사
 - `npm run import:jlpt`: JLPT API의 단어를 Supabase에 저장
+- `npm run generate:examples -- --level 5 --limit 20`: NVIDIA NIM으로 N5 단어 20개의 예문을 2개씩 생성
+
+## NVIDIA NIM 예문 생성
+
+`supabase/migrations/002_create_jlpt_example_sentences.sql`을 Supabase SQL Editor에서 실행하고 `.env.local`에 `NVIDIA_API_KEY`와 선택 사항인 `NVIDIA_MODEL`을 설정합니다. 생성 명령은 이미 예문이 2개 있는 단어를 건너뛰므로 안전하게 다시 실행할 수 있습니다.
+
+```bash
+npm run generate:examples -- --level 5 --limit 20
+```
+
+전체 단어를 처리할 때는 `--limit`과 `--offset`으로 작업 범위를 나누는 것을 권장합니다. 실제 저장 전 응답 형식을 확인하려면 `--dry-run --limit 1`을 사용하세요.
