@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
+import SpeechButton from "../../components/SpeechButton/SpeechButton";
 import { isSupabaseConfigured, supabase } from "../../lib/supabase";
 import type { ToeicWord } from "../../types/toeic";
 import styles from "./ToeicQuizPage.module.css";
@@ -157,7 +158,10 @@ export default function ToeicQuizPage() {
       <div className={styles.progress}><span style={{ width: `${((current + 1) / questions.length) * 100}%` }} /></div>
       <div className={styles.questionCard}>
         <p className={styles.direction}>이 단어의 의미는 무엇인가요?</p>
-        <h1 lang="en">{question.word.word}</h1>
+        <div className={styles.questionWord}>
+          <h1 lang="en">{question.word.word}</h1>
+          <SpeechButton text={question.word.word} />
+        </div>
         <span className={styles.wordMeta}>Day {question.word.day} · {question.word.topic}</span>
         <div className={styles.choices}>
           {question.choices.map((choice, index) => {

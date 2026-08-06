@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
+import SpeechButton from "../../components/SpeechButton/SpeechButton";
 import { isSupabaseConfigured, supabase } from "../../lib/supabase";
 import type { ToeicWord } from "../../types/toeic";
 import styles from "./ToeicVocabularyPage.module.css";
@@ -108,7 +109,10 @@ export default function ToeicVocabularyPage() {
           {filteredWords.map((item) => (
             <li className={styles.wordCard} key={item.id} value={item.position}>
               <span className={styles.position}>{item.position}</span>
-              <strong className={styles.word}>{item.word}</strong>
+              <div className={styles.wordWithAudio}>
+                <strong className={styles.word} lang="en">{item.word}</strong>
+                <SpeechButton text={item.word} />
+              </div>
               <span className={styles.meaning}>{item.meaning}</span>
             </li>
           ))}

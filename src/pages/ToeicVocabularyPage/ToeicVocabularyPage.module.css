@@ -16,6 +16,7 @@
 .wordCard { display: grid; grid-template-columns: 44px minmax(180px, .8fr) minmax(240px, 1.4fr); gap: 18px; align-items: center; padding: 17px 20px; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); }
 .position { display: grid; width: 32px; height: 32px; place-items: center; border-radius: 9px; background: #eef2ff; color: var(--color-primary-dark); font-size: 12px; font-weight: 800; }
 .word { font-size: 19px; }
+.wordWithAudio { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .meaning { color: var(--color-text-secondary); line-height: 1.55; white-space: pre-line; }
 .status, .notice { padding: 40px 20px; text-align: center; color: var(--color-text-secondary); }
 .notice { border: 1px dashed #c7d2fe; border-radius: var(--radius-lg); background: #eef2ff; }

@@ -1,0 +1,29 @@
+.button {
+  display: inline-grid;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: #eef2ff;
+  color: var(--color-primary-dark);
+  cursor: pointer;
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.button:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  background: #e0e7ff;
+  transform: scale(1.05);
+}
+
+.button:focus-visible {
+  outline: 3px solid rgb(99 102 241 / 25%);
+  outline-offset: 2px;
+}
+
+.button:disabled { cursor: not-allowed; opacity: .45; }
+.button svg { width: 21px; height: 21px; fill: currentColor; }
+.button svg path:last-child { fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: 1.8; }
+.speaking { border-color: var(--color-primary); background: var(--color-primary); color: white; }

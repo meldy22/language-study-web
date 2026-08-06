@@ -13,6 +13,7 @@
 .wordItem { overflow: hidden; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); }
 .wordCard { display: grid; grid-template-columns: minmax(160px, .9fr) minmax(200px, 1.6fr) auto; gap: 20px; align-items: center; padding: 18px 20px; }
 .japanese, .definition { display: flex; flex-direction: column; gap: 4px; }
+.wordWithAudio { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .word { font-size: 22px; font-weight: 800; }
 .furigana, .romaji { color: var(--color-text-secondary); font-size: 13px; }
 .meaning { font-weight: 650; }

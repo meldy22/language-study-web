@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
+import SpeechButton from "../../components/SpeechButton/SpeechButton";
 import { isSupabaseConfigured, supabase } from "../../lib/supabase";
 import type { VocabularyWord } from "../../types/vocabulary";
 import styles from "./QuizPage.module.css";
@@ -162,7 +163,10 @@ export default function QuizPage() {
       <div className={styles.progress}><span style={{ width: `${((current + 1) / questions.length) * 100}%` }} /></div>
       <div className={styles.questionCard}>
         <p className={styles.direction}>{question.direction}</p>
-        <h1 lang={question.direction.includes("의미에") ? "ko" : "ja"}>{question.prompt}</h1>
+        <div className={styles.questionWord}>
+          <h1 lang={mode === "meaning" ? "ko" : "ja"}>{question.prompt}</h1>
+          {mode !== "meaning" && <SpeechButton lang="ja-JP" text={question.word.word} />}
+        </div>
         {question.direction.includes("단어의 의미") && <span className={styles.reading}>{question.word.furigana}</span>}
         <div className={styles.choices}>
           {question.choices.map((choice, index) => {

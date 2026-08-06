@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 
+import SpeechButton from "../../components/SpeechButton/SpeechButton";
 import { isSupabaseConfigured, supabase } from "../../lib/supabase";
 import type { VocabularyWord } from "../../types/vocabulary";
 import styles from "./VocabularyPage.module.css";
@@ -139,9 +140,12 @@ export default function VocabularyPage() {
             {filteredWords.map((item) => (
               <li className={styles.wordItem} key={item.id}>
                 <div className={styles.wordCard}>
-                  <div className={styles.japanese}>
-                    <span className={styles.word}>{item.word}</span>
-                    <span className={styles.furigana}>{item.furigana}</span>
+                  <div className={styles.wordWithAudio}>
+                    <div className={styles.japanese}>
+                      <span className={styles.word} lang="ja">{item.word}</span>
+                      <span className={styles.furigana} lang="ja">{item.furigana}</span>
+                    </div>
+                    <SpeechButton lang="ja-JP" text={item.word} />
                   </div>
                   <div className={styles.definition}>
                     <span className={styles.meaning}>{item.meaning}</span>
