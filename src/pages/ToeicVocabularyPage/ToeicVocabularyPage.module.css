@@ -1,0 +1,26 @@
+.page { padding-bottom: 72px; }
+.backLink { display: inline-block; margin-bottom: 24px; color: var(--color-text-secondary); font-size: 14px; font-weight: 700; }
+.headingRow { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 24px; }
+.eyebrow { margin-bottom: 8px; color: var(--color-primary); font-size: 12px; font-weight: 800; letter-spacing: .12em; }
+.count { display: flex; min-width: 96px; padding: 14px; flex-direction: column; align-items: center; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); }
+.count strong { color: var(--color-primary-dark); font-size: 24px; }
+.count span { color: var(--color-text-secondary); font-size: 12px; }
+.quizActions { display: flex; justify-content: flex-end; gap: 8px; margin: -8px 0 18px; }.quizActions a { padding: 9px 12px; border-radius: 9px; background: #eef2ff; color: var(--color-primary-dark); font-size: 13px; font-weight: 750; }.quizActions a:hover { background: #e0e7ff; }
+.dayPicker { display: grid; grid-template-columns: repeat(10, 1fr); gap: 7px; margin-bottom: 20px; }
+.dayPicker a { display: grid; min-height: 38px; place-items: center; border: 1px solid var(--color-border); border-radius: 9px; background: var(--color-surface); color: var(--color-text-secondary); font-size: 13px; font-weight: 750; }
+.dayPicker a:hover { border-color: var(--color-primary); color: var(--color-primary-dark); }
+.dayPicker .activeDay { border-color: var(--color-primary); background: var(--color-primary); color: white; }
+.searchInput { width: 100%; margin-bottom: 20px; padding: 14px 18px; border: 1px solid var(--color-border); border-radius: var(--radius-md); outline: none; background: var(--color-surface); color: var(--color-text); }
+.searchInput:focus { border-color: var(--color-primary); box-shadow: 0 0 0 3px rgb(99 102 241 / 14%); }
+.wordList { display: grid; margin: 0; padding: 0; gap: 10px; list-style: none; }
+.wordCard { display: grid; grid-template-columns: 44px minmax(180px, .8fr) minmax(240px, 1.4fr); gap: 18px; align-items: center; padding: 17px 20px; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); }
+.position { display: grid; width: 32px; height: 32px; place-items: center; border-radius: 9px; background: #eef2ff; color: var(--color-primary-dark); font-size: 12px; font-weight: 800; }
+.word { font-size: 19px; }
+.wordWithAudio { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.meaning { color: var(--color-text-secondary); line-height: 1.55; white-space: pre-line; }
+.status, .notice { padding: 40px 20px; text-align: center; color: var(--color-text-secondary); }
+.notice { border: 1px dashed #c7d2fe; border-radius: var(--radius-lg); background: #eef2ff; }
+.pagination { display: flex; justify-content: space-between; margin-top: 28px; }
+.pagination a { padding: 11px 14px; border: 1px solid var(--color-border); border-radius: 10px; background: var(--color-surface); color: var(--color-primary-dark); font-weight: 750; }
+@media (max-width: 700px) { .dayPicker { grid-template-columns: repeat(5, 1fr); } .wordCard { grid-template-columns: 40px 1fr; gap: 10px; } .meaning { grid-column: 2; } }
+@media (max-width: 480px) { .headingRow { align-items: flex-start; } .dayPicker { grid-template-columns: repeat(5, 1fr); } .quizActions { align-items: stretch; flex-direction: column; } }
